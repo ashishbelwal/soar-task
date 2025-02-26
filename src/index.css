@@ -22,6 +22,8 @@
   --success: #41D4A8;
   --danger: #FF4B4A;
   --warning: #FFBB38;
+  --lato: 'Lato', sans-serif;
+  --inter: 'Inter', sans-serif;
 }
 
 /* Light Mode */
@@ -43,11 +45,13 @@
     --success: #41D4A8;
     --danger: #FF4B4A;
     --warning: #FFBB38;
+    --lato: 'Lato', sans-serif;
+    --inter: 'Inter', sans-serif;
   }
 }
 
 /* Dark Mode */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a; 
     --foreground: #e4e4e4;
@@ -69,8 +73,10 @@
     --success: #41D4A8;
     --danger: #FF4B4A;
     --warning: #FFBB38;
+    --lato: 'Lato', sans-serif;
+    --inter: 'Inter', sans-serif;
   }
-}
+} */
 
 /* theme  */
 @theme {
@@ -90,7 +96,14 @@
   --color-success: var(--success);
   --color-danger: var(--danger);
   --color-warning: var(--warning);
-  --font-lato: 'Lato', sans-serif;
-  --font-inter: 'Inter', sans-serif;
+  --font-lato: var(--lato);
+  --font-inter: var(--inter);
 }
+body{
+  font-family: var(--lato);
+}
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
 
