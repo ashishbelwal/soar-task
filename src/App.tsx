@@ -2,9 +2,11 @@ import "./App.css";
 
 function App() {
   return (
-    <>
-      <h2>Coming Soon...</h2>
-    </>
+    <div className="w-screen h-screen flex items-center justify-center">
+      <h1 className="text-3xl font-bold font-inter text-primary">
+        Soar: Coming Soon!
+      </h1>
+    </div>
   );
 }
 
