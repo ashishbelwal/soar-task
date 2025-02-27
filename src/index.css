@@ -100,7 +100,7 @@
   --font-inter: var(--inter);
 }
 body{
-  font-family: var(--lato);
+  font-family: var(--inter);
 }
 .horizontal-scroll::-webkit-scrollbar {
   display: none;
@@ -124,7 +124,21 @@ body{
 
 .y-scrollbar::-webkit-scrollbar-thumb
 {
-  background-color: #d3d3d350;
+  background-color: #14141450;
 }
+.react-multiple-carousel__arrow {
+  background: #ffffff !important;
+ 
+}
+.react-multiple-carousel__arrow::before{
+  color: var(--text-secondary) !important;
+}
+.react-multiple-carousel__arrow--right{
+  box-shadow: 4px 4px 10px 0px #e5e5e5;
+}
+.react-multiple-carousel__arrow--left{
+  box-shadow: -4px 4px 10px 0px #e5e5e5;
+}
+
 
 
