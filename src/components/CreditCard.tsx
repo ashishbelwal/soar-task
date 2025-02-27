@@ -1,102 +1,122 @@
-const type: string = "Visa";
+import { useEffect, useRef, useState, MouseEvent } from "react";
+import { motion, useSpring } from "framer-motion";
+import { CardFront } from "./CardFront";
+import { CardBack } from "./CardBack";
 
-const CreditCard = () => {
+const CreditCard = ({ type = "Visa" }: { type?: string }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [rotateXaxis, setRotateXaxis] = useState(0);
+  const [rotateYaxis, setRotateYaxis] = useState(0);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const startY = useRef(0);
+
+  const handleMouseDown = (event: MouseEvent<HTMLDivElement>) => {
+    isDragging.current = false;
+    startX.current = event.clientX;
+    startY.current = event.clientY;
+  };
+
+  const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+
+    // Determine if dragging occurred
+    const dx = Math.abs(event.clientX - startX.current);
+    const dy = Math.abs(event.clientY - startY.current);
+    if (dx > 5 || dy > 5) isDragging.current = true;
+
+    const elementRect = ref.current.getBoundingClientRect();
+    const elementCenterX = elementRect.width / 2;
+    const elementCenterY = elementRect.height / 2;
+    const mouseX = event.clientY - elementRect.y - elementCenterY;
+    const mouseY = event.clientX - elementRect.x - elementCenterX;
+    setRotateXaxis((mouseX / elementRect.width) * 20);
+    setRotateYaxis((mouseY / elementRect.height) * 20);
+  };
+
+  const handleMouseEnd = () => {
+    setRotateXaxis(0);
+    setRotateYaxis(0);
+  };
+
+  const handleClick = () => {
+    if (!isDragging.current) {
+      setIsFlipped((prevState) => !prevState);
+    }
+  };
+
+  const dx = useSpring(0, { stiffness: 300, damping: 40 });
+  const dy = useSpring(0, { stiffness: 300, damping: 40 });
+
+  useEffect(() => {
+    dx.set(-rotateXaxis);
+    dy.set(rotateYaxis);
+  }, [rotateXaxis, rotateYaxis]);
+
   return (
-    <div
-      className={`w-[265px] lg:w-[350px] snap-center user-select-none cursor-grab cursor-pointer h-[200px] lg:h-[235px] flex-shrink-0
-        rounded-[25px] overflow-hidden relative text-white hover:scale-102 transition-[0.3s] 
-        ${
-          type === "Visa"
-            ? "bg-gradient-to-br from-[#5b5a6f] to-black text-quaternary"
-            : "text-primary bg-[#ffffff]"
-        } `}
-      draggable // Make the credit card draggable
-      onDragStart={(e) => e.preventDefault()} // Prevent text selection while dragging
+    <motion.div
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseEnd}
+      onMouseLeave={handleMouseEnd}
+      onClick={handleClick}
+      transition={{ type: "spring", stiffness: 300, damping: 40 }}
+      className="w-[265px] lg:w-[350px] h-[200px] lg:h-[235px]"
+      style={{
+        perspective: "1200px",
+        transformStyle: "preserve-3d",
+      }}
     >
-      {/* card header  */}
-      <div className="flex justify-between items-center p-[20px] lg:p-[26px]">
-        <div>
-          <p
-            className={`text-[11px] lg:text-[12px] p-0 ${
-              type === "Visa" ? "" : "text-secondary"
-            }`}
-          >
-            Balance
-          </p>
-          <p
-            className={`text-[16px] lg:text-[20px] font-semibold p-0 ${
-              type === "Visa" ? "" : "text-primary"
-            }`}
-          >
-            $5,756
-          </p>
-        </div>
-        <div
-          className={`w-[35px] h-[35px]   bg-cover ${
-            type === "Visa" ? "bg-[url(/chip.png)]" : "bg-[url(/chip-dark.png)]"
-          }`}
-        ></div>
-      </div>
-      {/* card body  */}
-      <div className="flex flex-row gap-[30px] px-[20px] lg:px-[26px] pb-[20px] lg:pb-[26px]">
-        <div className="w-1/2">
-          <p
-            className={`text-[10px] lg:text-[12px] p-0 ${
-              type === "Visa" ? "text-[#ffffff70]" : "text-secondary"
-            }`}
-          >
-            CARD HOLDER
-          </p>
-          <p
-            className={`text-[13px] lg:text-[15px] p-0 font-semibold ${
-              type === "Visa" ? "" : "text-primary"
-            }`}
-          >
-            Eddy Cusuma
-          </p>
-        </div>
-        <div className="w-1/2">
-          <p
-            className={`text-[10px] lg:text-[12px] p-0 ${
-              type === "Visa" ? "text-[#ffffff70]" : "text-secondary"
-            }`}
-          >
-            VALID THRU
-          </p>
-          <p
-            className={`text-[13px] lg:text-[15px] font-semibold p-0 ${
-              type === "Visa" ? "" : "text-primary"
-            }`}
-          >
-            12/22
-          </p>
-        </div>
-      </div>
-      <div
-        className={`flex flex-row gap-[30px] px-[20px] lg:px-[26px] py-[20px] h-[70px]  relative ${
-          type === "Visa"
-            ? "bg-gradient-to-br from-[#ffffff30] to-transparent"
-            : "bg-[#ffffff] border-t-[1px] border-t-[#DFEAF2]"
-        }`}
+      <motion.div
+        ref={ref}
+        whileHover={{ scale: 1.01 }}
+        transition={{ type: "spring", stiffness: 300, damping: 40 }}
+        style={{
+          width: "100%",
+          height: "100%",
+          rotateX: dx,
+          rotateY: dy,
+        }}
       >
-        <div className="w-full">
-          <p
-            className={`text-[15px] lg:text-[22px] font-semibold p-0 ${
-              type === "Visa" ? "text-[#ffffff]" : "text-primary"
-            }`}
+        <div
+          style={{
+            perspective: "1200px",
+            transformStyle: "preserve-3d",
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <motion.div
+            animate={{ rotateY: isFlipped ? -180 : 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 40 }}
+            style={{
+              width: "100%",
+              height: "100%",
+              zIndex: isFlipped ? 0 : 1,
+              backfaceVisibility: "hidden",
+              position: "absolute",
+            }}
           >
-            3778 **** **** 1234
-          </p>
+            <CardFront type={type} />
+          </motion.div>
+          <motion.div
+            initial={{ rotateY: 180 }}
+            animate={{ rotateY: isFlipped ? 0 : 180 }}
+            transition={{ type: "spring", stiffness: 300, damping: 40 }}
+            style={{
+              width: "100%",
+              height: "100%",
+              zIndex: isFlipped ? 1 : 0,
+              backfaceVisibility: "hidden",
+              position: "absolute",
+            }}
+          >
+            <CardBack type={type} />
+          </motion.div>
         </div>
-        <div className="absolute right-[26px]">
-          {type === "Visa" ? (
-            <img src="/mastercard.png" alt="" />
-          ) : (
-            <img src="/mastercard-dark.png" alt="" />
-          )}
-        </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

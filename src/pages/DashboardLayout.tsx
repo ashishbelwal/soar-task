@@ -10,7 +10,7 @@ const DashboardLayout = () => {
       </div>
       <div className="w-full lg:w-[calc(100%-250px)] h-full">
         <Navbar />
-        <div className="w-full h-full bg-secondary-bg p-[30px] overflow-auto">
+        <div className="w-full h-full bg-secondary-bg p-[40px] overflow-auto">
           <Outlet />
         </div>
       </div>
