@@ -2,8 +2,9 @@ import { useEffect, useRef, useState, MouseEvent } from "react";
 import { motion, useSpring } from "framer-motion";
 import { CardFront } from "./CardFront";
 import { CardBack } from "./CardBack";
+import { CreditCardProps } from "../types";
 
-const CreditCard = ({ type = "Visa" }: { type?: string }) => {
+const CreditCard = ({ card }: { card: CreditCardProps }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [rotateXaxis, setRotateXaxis] = useState(0);
   const [rotateYaxis, setRotateYaxis] = useState(0);
@@ -98,7 +99,7 @@ const CreditCard = ({ type = "Visa" }: { type?: string }) => {
               position: "absolute",
             }}
           >
-            <CardFront type={type} />
+            <CardFront card={card} />
           </motion.div>
           <motion.div
             initial={{ rotateY: 180 }}
@@ -112,7 +113,7 @@ const CreditCard = ({ type = "Visa" }: { type?: string }) => {
               position: "absolute",
             }}
           >
-            <CardBack type={type} />
+            <CardBack card={card} />
           </motion.div>
         </div>
       </motion.div>

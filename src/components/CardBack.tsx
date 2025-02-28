@@ -1,10 +1,12 @@
-export const CardBack = ({ type }: { type: string }) => {
+import { CreditCardProps } from "../types";
+
+export const CardBack = ({ card }: { card: CreditCardProps }) => {
   return (
     <div
       className={`w-[265px] lg:w-[350px] snap-center user-select-none cursor-pointer h-[200px] lg:h-[235px] flex-shrink-0
         rounded-[25px] overflow-hidden relative text-white hover:scale-102 transition-[0.3s] flex items-center
         ${
-          type === "Visa"
+          card.cardType === "Visa"
             ? "bg-gradient-to-br from-[#5b5a6f] to-black text-quaternary"
             : "text-primary bg-[#ffffff]"
         } `}
@@ -13,33 +15,33 @@ export const CardBack = ({ type }: { type: string }) => {
         <div className="w-1/2 ">
           <p
             className={`text-[10px] lg:text-[12px] p-0 ${
-              type === "Visa" ? "text-[#ffffff70]" : "text-secondary"
+              card.cardType === "Visa" ? "text-[#ffffff70]" : "text-secondary"
             }`}
           >
             CVV
           </p>
           <p
             className={`text-[13px] lg:text-[15px] p-0 font-semibold ${
-              type === "Visa" ? "" : "text-primary"
+              card.cardType === "Visa" ? "" : "text-primary"
             }`}
           >
-            576
+            {card.cvv}
           </p>
         </div>
         <div className="w-1/2">
           <p
             className={`text-[10px] lg:text-[12px] p-0 ${
-              type === "Visa" ? "text-[#ffffff70]" : "text-secondary"
+              card.cardType === "Visa" ? "text-[#ffffff70]" : "text-secondary"
             }`}
           >
             VALID THRU
           </p>
           <p
             className={`text-[13px] lg:text-[15px] font-semibold p-0 ${
-              type === "Visa" ? "" : "text-primary"
+              card.cardType === "Visa" ? "" : "text-primary"
             }`}
           >
-            12/22
+            {card.expiryDate}
           </p>
         </div>
       </div>

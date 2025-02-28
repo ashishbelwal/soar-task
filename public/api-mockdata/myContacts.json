@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "name": "Livia",
+        "image": "../user-1.png",
+        "title": "CEO"
+    },
+    {
+        "id": "2",
+        "name": "Randy Press",
+        "image": "../user-2.png",
+        "title": "Director"
+    },
+    {
+        "id": "3",
+        "name": "Workman",
+        "image": "../user-3.png",
+        "title": "Designer"
+    },
+    {
+        "id": "4",
+        "name": "John Doe",
+        "image": "https://randomuser.me/api/portraits/men/1.jpg",
+        "title": "Software Engineer"
+    },
+    {
+        "id": "5",
+        "name": "Alicia",
+        "image": "https://randomuser.me/api/portraits/men/2.jpg",
+        "title": "Sales Manager"
+    },
+    {
+        "id": "6",
+        "name": "Bella",
+        "image": "https://randomuser.me/api/portraits/women/3.jpg",
+        "title": "Quality Assurance"
+    }
+]

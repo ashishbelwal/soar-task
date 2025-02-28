@@ -1,0 +1,45 @@
+[
+    {
+      "id": "1",
+      "withdraw": 240,
+      "deposit": 600,
+      "label": "Sat"
+    },
+    {
+      "id": "2",
+      "withdraw": 180,
+      "deposit": 500,
+      "label": "Sun"
+    },
+    {
+      "id": "3",
+      "withdraw": 300,
+      "deposit": 700,
+      "label": "Mon"
+    },
+    {
+      "id": "4",
+      "withdraw": 150,
+      "deposit": 450,
+      "label": "Tue"
+    },
+    {
+      "id": "5",
+      "withdraw": 200,
+      "deposit": 550,
+      "label": "Wed"
+    },
+    {
+      "id": "6",
+      "withdraw": 275,
+      "deposit": 620,
+      "label": "Thu"
+    },
+    {
+      "id": "7",
+      "withdraw": 190,
+      "deposit": 580,
+      "label": "Fri"
+    }
+  ]
+  

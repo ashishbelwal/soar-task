@@ -1,0 +1,48 @@
+[
+    {
+        "type": "debit",
+        "amount": 800,
+        "date": "28 January 2025",
+        "description": "Deposit from Bank",
+        "status": "success",
+        "source": "card",
+        "id": 1
+    },
+    {
+        "type": "credit",
+        "amount": 1500,
+        "date": "26 January 2025",
+        "description": "Freelance Payment",
+        "status": "success",
+        "source": "paypal",
+        "id": 2
+    },
+    {
+        "type": "credit",
+        "amount": 300,
+        "date": "25 January 2025",
+        "description": "Jemi Wilson",
+        "status": "success",
+        "source": "others",
+        "id": 3
+    },
+    {
+        "type": "debit",
+        "amount": 1200,
+        "date": "24 January 2025",
+        "description": "Electronics Purchase",
+        "status": "failed",
+        "source": "card",
+        "id": 4
+    },
+    {
+        "type": "credit",
+        "amount": 500,
+        "date": "22 January 2025",
+        "description": "Gift from Friend",
+        "status": "success",
+        "source": "paypal",
+        "id": 5
+    }
+
+]

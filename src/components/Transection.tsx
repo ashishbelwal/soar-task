@@ -1,11 +1,6 @@
-interface transactionProps {
-  type: string;
-  description: string;
-  date: string;
-  amount: number;
-  source: string;
-}
-export const Transaction = (transaction: transactionProps) => {
+import { Transection } from "../types";
+
+export const Transaction = (transaction: Transection) => {
   return (
     <div className="flex w-full flex-row items-center rounded-full gap-[10px] lg:gap-[16px]">
       {transaction.source === "card" && (
@@ -35,10 +30,10 @@ export const Transaction = (transaction: transactionProps) => {
       <div>
         <h3
           className={`text-[14px] lg:text-[16px] font-semibold ${
-            transaction.type === "Debit" ? "text-danger" : "text-success"
+            transaction.type === "debit" ? "text-danger" : "text-success"
           }`}
         >
-          {transaction.type === "Debit" ? "-" : "+"}
+          {transaction.type === "debit" ? "-" : "+"}
           {transaction.amount}
         </h3>
       </div>

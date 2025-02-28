@@ -30,7 +30,7 @@ const Dashboard = () => {
             <div className="w-full lg:w-2/5">
               <QuickTransfer />
             </div>
-            <div className="w-full lg:flex-1">
+            <div className="w-full lg:w-3/5">
               <BalanceHistory />
             </div>
           </div>

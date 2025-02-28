@@ -1,14 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
-import employeesReducer from './employeesSlice';
-import cardsReducer from './cardsSlice';
-import transactionsReducer from './transactionsSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { api } from "./api";
 
 export const store = configureStore({
-    reducer: {
-        employees: employeesReducer,
-        cards: cardsReducer,
-        transactions: transactionsReducer,
-    }
+  reducer: {
+    [api.reducerPath]: api.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(api.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

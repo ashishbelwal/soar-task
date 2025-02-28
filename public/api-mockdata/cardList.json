@@ -1,0 +1,92 @@
+[
+    {
+      "cardNumber": "4539 **** **** 1234",
+      "cardType": "Visa",
+      "expiryDate": "12/26",
+      "balance": 3200.5,
+      "cardHolderName": "John Doe",
+      "cvv": "234",
+      "id": 1
+    },
+    {
+      "cardNumber": "5196 **** **** 5678",
+      "cardType": "MasterCard",
+      "expiryDate": "06/27",
+      "balance": 1500.0,
+      "cardHolderName": "Jane Smith",
+      "cvv": "876",
+      "id": 2
+    },
+    {
+      "cardNumber": "6011 **** **** 9101",
+      "cardType": "Discover",
+      "expiryDate": "09/24",
+      "balance": 4800.99,
+      "cardHolderName": "Alice Brown",
+      "cvv": "542",
+      "id": 3
+    },
+    {
+      "cardNumber": "3778 **** **** 1122",
+      "cardType": "American Express",
+      "expiryDate": "03/28",
+      "balance": 500.25,
+      "cardHolderName": "Michael Johnson",
+      "cvv": "672",
+      "id": 4
+    },
+    {
+      "cardNumber": "3056 **** **** 3344",
+      "cardType": "Diners Club",
+      "expiryDate": "07/25",
+      "balance": 2700.0,
+      "cardHolderName": "Chris Evans",
+      "cvv": "985",
+      "id": 5
+    },
+    {
+      "cardNumber": "6759 **** **** 5566",
+      "cardType": "Maestro",
+      "expiryDate": "05/29",
+      "balance": 1300.75,
+      "cardHolderName": "Sophia Wilson",
+      "cvv": "217",
+      "id": 6
+    },
+    {
+      "cardNumber": "3566 **** **** 7788",
+      "cardType": "JCB",
+      "expiryDate": "02/30",
+      "balance": 2100.4,
+      "cardHolderName": "Olivia Martinez",
+      "cvv": "452",
+      "id": 7
+    },
+    {
+      "cardNumber": "5018 **** **** 9900",
+      "cardType": "Maestro",
+      "expiryDate": "11/26",
+      "balance": 3900.6,
+      "cardHolderName": "David Anderson",
+      "cvv": "628",
+      "id": 8
+    },
+    {
+      "cardNumber": "6767 **** **** 2233",
+      "cardType": "UnionPay",
+      "expiryDate": "08/28",
+      "balance": 1700.9,
+      "cardHolderName": "Emma Thompson",
+      "cvv": "734",
+      "id": 9
+    },
+    {
+      "cardNumber": "6282 **** **** 4455",
+      "cardType": "China UnionPay",
+      "expiryDate": "10/27",
+      "balance": 6200.8,
+      "cardHolderName": "Liam Taylor",
+      "cvv": "889",
+      "id": 10
+    }
+  ]
