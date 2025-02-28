@@ -17,7 +17,6 @@ function App() {
             <Route path="/all-cards" element={<AllCards />} />
             <Route path="/settings" element={<Settings />} />
           </Route>
-
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
