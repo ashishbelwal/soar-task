@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
-import Dashboard from "./pages/dashboard/Dashboard";
+import Dashboard from "./pages/dashboard/dashboard";
 import Settings from "./pages/dashboard/Settings";
 import DashboardLayout from "./pages/DashboardLayout";
 import NotFound from "./pages/NotFound";
