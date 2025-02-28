@@ -95,3 +95,19 @@ export interface MyContact {
   image: string;
   title: string;
 }
+export interface Profile {
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  phone: string;
+  presentAddress: string;
+  permanentAddress: string;
+  city: string;
+  state: string;
+  zip: string;
+  country: string;
+  image: string | File;
+  dob: string;
+}

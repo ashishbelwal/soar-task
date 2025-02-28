@@ -95,7 +95,7 @@ const QuickTransfer = () => {
               success ? "flex" : "hidden"
             }`}
           >
-            <p className="text-success text-[12px] lg:text-[16px]">
+            <p className="text-success text-[12px] lg:text-[16px] text-center">
               Amount has been transferred to {selectedUser} successfully.
             </p>
           </div>

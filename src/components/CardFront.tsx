@@ -8,7 +8,7 @@ export const CardFront = ({ card }: { card: CreditCardProps }) => {
           ${
             card.cardType === "Visa"
               ? "bg-gradient-to-br from-[#5b5a6f] to-black text-quaternary"
-              : "text-primary bg-[#ffffff]"
+              : "text-primary bg-[#ffffff] border-[1px] border-[#DFEAF2] border-inset"
           } `}
       draggable
       onDragStart={(e) => e.preventDefault()}

@@ -35,7 +35,7 @@ const Sidebar = ({ closeSidebar }: { closeSidebar?: () => void }) => {
           Soar Task
         </h1>
       </div>
-      <div className="relative w-[250px] mt-[20px] h-[calc(100%-130px)] lg:mt-[110px] overflow-x-hidden overflow-y-auto">
+      <div className="relative w-[250px] mt-[20px] h-[calc(100%-130px)] lg:mt-[30px] overflow-x-hidden overflow-y-auto">
         <motion.div
           className="absolute left-0 w-2 h-[60px] bg-foreground rounded-tr-[10px] rounded-br-[10px]"
           animate={{ top: activeIndex * 60 }}
@@ -52,7 +52,7 @@ const Sidebar = ({ closeSidebar }: { closeSidebar?: () => void }) => {
             return (
               <li
                 key={index}
-                className={`relative flex items-center h-[60px] gap-4 py-[18px] px-[38px] rounded-lg cursor-pointer transition-all duration-300 ${
+                className={`relative flex items-center h-[60px] gap-4 py-[18px] px-[38px] hover:bg-[#E6EFF530] cursor-pointer transition-all duration-300 ${
                   isActive
                     ? "text-turtiary font-bold"
                     : "text-[#B1B1B1] hover:gap-5"

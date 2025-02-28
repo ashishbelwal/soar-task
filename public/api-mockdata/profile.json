@@ -1,0 +1,16 @@
+{
+    "name": "Charlene Reed",
+    "username": "charlenereed",
+    "email": "charlenereed@gmail.com",
+    "password": "welcome@123",
+    "confirmPassword": "welcome@123",
+    "phone": "+1234567890",
+    "presentAddress": "123 Main St, Anytown, USA",
+    "permanentAddress": "123 Main St, Anytown, USA",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "12345",
+    "country": "USA",
+    "image": "https://via.placeholder.com/150",
+    "dob": "25 January 1990"
+}

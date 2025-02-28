@@ -3,9 +3,19 @@ import {
   Card,
   ExpenseStatistics,
   MyContact,
+  Profile,
   Transection,
   WeeklyActivity,
 } from "../types";
+
+const apisUrl = {
+  getCards: "/api-mockdata/cardList.json",
+  getRecentTransection: "/api-mockdata/recentTransection.json",
+  getWeeklyActivity: "/api-mockdata/weeklyTransaction.json",
+  getExpenseStatistics: "/api-mockdata/expenses.json",
+  getMyContacts: "/api-mockdata/myContacts.json",
+  getProfile: "/api-mockdata/profile.json",
+};
 
 export const api = createApi({
   reducerPath: "api",
@@ -16,35 +26,42 @@ export const api = createApi({
   endpoints: (builder) => ({
     getCards: builder.query<Card[], void>({
       query: () => ({
-        url: "/api-mockdata/cardList.json",
+        url: apisUrl.getCards,
         validateStatus: (response, result) =>
           response.status === 200 && Boolean(result),
       }),
     }),
     getRecentTransection: builder.query<Transection[], void>({
       query: () => ({
-        url: "/api-mockdata/recentTransection.json",
+        url: apisUrl.getRecentTransection,
         validateStatus: (response, result) =>
           response.status === 200 && Boolean(result),
       }),
     }),
     getWeeklyActivity: builder.query<WeeklyActivity[], void>({
       query: () => ({
-        url: "/api-mockdata/weeklyTransaction.json",
+        url: apisUrl.getWeeklyActivity,
         validateStatus: (response, result) =>
           response.status === 200 && Boolean(result),
       }),
     }),
     getExpenseStatistics: builder.query<ExpenseStatistics[], void>({
       query: () => ({
-        url: "/api-mockdata/expenses.json",
+        url: apisUrl.getExpenseStatistics,
         validateStatus: (response, result) =>
           response.status === 200 && Boolean(result),
       }),
     }),
     getMyContacts: builder.query<MyContact[], void>({
       query: () => ({
-        url: "/api-mockdata/myContacts.json",
+        url: apisUrl.getMyContacts,
+        validateStatus: (response, result) =>
+          response.status === 200 && Boolean(result),
+      }),
+    }),
+    getProfile: builder.query<Profile, void>({
+      query: () => ({
+        url: apisUrl.getProfile,
         validateStatus: (response, result) =>
           response.status === 200 && Boolean(result),
       }),
@@ -58,4 +75,5 @@ export const {
   useGetWeeklyActivityQuery,
   useGetExpenseStatisticsQuery,
   useGetMyContactsQuery,
+  useGetProfileQuery,
 } = api;
